@@ -1,0 +1,103 @@
+'''
+student marks manager
+
+marks = []
+for mark in range(3):
+    mark = int(input("Enter the marks:"))
+    marks.append(mark)
+#print(marks)
+#insert 90 marks into list
+marks.insert(0,90)
+#print(marks)
+#add multiple marks
+marks.extend([75,85])
+#print(marks)
+#check for 75 marks in given marks list
+if 75 in marks:
+    marks.remove(75)
+#to remove the final mark using pop
+removed_mark = marks.pop()
+print(f'removed mark is {removed_mark}')
+#final list of marks
+print(f'Final Student List is {marks}')
+print("count  of student list:", len(marks))
+'''
+'''
+#control block(if,elif,else,for ,while,break,continue)
+
+# BMI Usecase --> BMI (Body Mass Index)
+# weight --> kgs
+# height --> metres
+# feet --> 12 inches --> inch --> 2.54 cm
+# BMI chain rule
+'''
+'''< 18.5 --> Underweight
+18.5 - 24.9 --> Normal weight
+25 - 29.9 --> Overweight
+>= 30 --> Obesity
+
+# Input
+# BMI = weight / (height ** 2)
+
+n_of_t_user_input = int(input("Enter the number of users: "))
+
+for i in range(n_of_t_user_input):
+    name = input("Enter your name: ")
+    weight = float(input("Enter the weight in kgs: "))
+    height = float(input("Enter the height in metres: "))
+
+    # BMI calculation with validation
+    if weight > 0 and height > 0:
+        bmi = weight / (height ** 2)
+        print(f"{name}, your BMI is: {round(bmi, 2)}")
+
+        # BMI classification
+        if bmi < 18.5:
+            print(f"{name}, you are Underweight")
+        elif 18.5 <= bmi < 25:
+            print(f"{name}, you are Normal weight")
+        elif 25 <= bmi < 30:
+            print(f"{name}, you are Overweight")
+        else:
+            print(f"{name}, you are Obese")
+    else:
+        print("Make sure to enter only positive values for weight and height.")
+'''
+#Task--> store the results of name,weight,height -->BMI INTO a collection
+
+#repetition --> while
+#same above task we need to handle the errors (Exception Handling) and also
+#make user strictly to enter only numeric values
+
+while True:
+    weight = int(input("Enter the weight in kgs:"))
+    height = float(input("Enter the height in metries:"))
+    #in this case we prefer Exception Handling
+    try:
+        if weight > 0 and height > 0:
+            break
+    except Exception as e:
+        print(f'The Error is {e}')
+n_of_t_user_input = int(input("Enter the number of users: "))
+
+for i in range(n_of_t_user_input):
+    name = input("Enter your name: ")
+    weight = float(input("Enter the weight in kgs: "))
+    height = float(input("Enter the height in metres: "))
+
+    # BMI calculation with validation
+    if weight > 0 and height > 0:
+        bmi = weight / (height ** 2)
+        print(f"{name} your BMI is: {round(bmi, 2)}")
+
+        # BMI classification
+        if bmi < 18.5:
+            print(f"{name}  is into Underweight category and BMI is {bmi}")
+        elif 18.5 <= bmi < 25:
+            print(f"{name} is into  Normal weight category and BMI is {bmi}")
+        elif 25 <= bmi:
+            print(f"{name}is into Overweight category and BMI is {bmi}")
+        elif bmi< 30:
+            print(f"{name} is into  Obesity category and BMI is {bmi}")
+    else:
+        print("Make sure to enter only positive values for weight and height.")
