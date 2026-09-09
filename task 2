@@ -1,0 +1,22 @@
+# Unique Name Manager
+names = ["Asha", "Rahul", "Asha", "John", "Rahul"]
+unique_names = set(names)
+unique_names.update(["Meera", "Arun", "Priya"])
+unique_names.discard("John")
+print("Unique names:", unique_names)
+
+# Course Student Comparison
+python_students = {"Asha", "Rahul", "John", "Meera"}
+da_students = {"Rahul", "Meera", "Arun"}
+all_students = python_students | da_students
+both_courses = python_students & da_students
+only_python = python_students - da_students
+only_one_course = python_students ^ da_students
+
+print("All students:", all_students)
+print("Both courses:", both_courses)
+print("Only Python:", only_python)
+print("Only one course:", only_one_course)
+print("DA subset of Python:", da_students.issubset(python_students))
+print("Python superset of DA:", python_students.issuperset(da_students))
+print("Disjoint sets:", python_students.isdisjoint(da_students))
